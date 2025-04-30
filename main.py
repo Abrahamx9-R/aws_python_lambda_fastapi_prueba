@@ -20,6 +20,7 @@ async def startup_event():
 async def receive_event(request: Request):
     try:
         payload = await request.json()
+        print(payload)  # Debugging line to see the payload
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid JSON payload")
 
